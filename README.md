@@ -4,5 +4,6 @@ Proyecto para ejecutar desde la linea de comandos y cargar libros y ejemplares e
 # Objetivo
 
 El alumno debe completar:
-	* Anotaciones en la capa de repositorio
-	* Métodos de la capa de servicio
+
+* Anotaciones en la capa de repositorio
+* Métodos de la capa de servicio
