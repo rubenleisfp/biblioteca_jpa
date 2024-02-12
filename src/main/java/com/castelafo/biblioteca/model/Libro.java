@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,8 +26,10 @@ public class Libro {
 	@Column(name="isbn")
 	private String isbn;
 
-	@OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Ejemplar> ejemplares = new ArrayList<>();
+	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true, fetch=FetchType.EAGER)
+    private List<Ejemplar> ejemplares = new ArrayList<>();
+
 
 	// getters y setters
 	public Long getId() {
