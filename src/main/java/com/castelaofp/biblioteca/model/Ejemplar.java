@@ -1,4 +1,4 @@
-package com.castelafo.biblioteca.model;
+package com.castelaofp.biblioteca.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

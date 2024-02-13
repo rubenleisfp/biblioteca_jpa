@@ -1,4 +1,4 @@
-package com.castelafo.biblioteca.service.exceptions;
+package com.castelaofp.biblioteca.service.exceptions;
 
 public class NotFoundException extends Exception {
 

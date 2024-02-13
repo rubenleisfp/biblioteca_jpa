@@ -1,4 +1,4 @@
-package com.castelafo.biblioteca.dto;
+package com.castelaofp.biblioteca.dto;
 
 public class EjemplarDto {
 

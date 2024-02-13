@@ -1,4 +1,4 @@
-package com.castelafo.biblioteca.dto;
+package com.castelaofp.biblioteca.dto;
 
 import java.util.ArrayList;
 import java.util.List;

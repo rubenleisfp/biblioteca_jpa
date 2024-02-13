@@ -1,10 +1,10 @@
-package com.castelafo.biblioteca.mapper;
+package com.castelaofp.biblioteca.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.castelafo.biblioteca.dto.EjemplarDto;
-import com.castelafo.biblioteca.model.Ejemplar;
+import com.castelaofp.biblioteca.dto.EjemplarDto;
+import com.castelaofp.biblioteca.model.Ejemplar;
 
 public class EjemplarMapper {
 

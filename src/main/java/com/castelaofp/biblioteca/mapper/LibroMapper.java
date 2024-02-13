@@ -1,11 +1,11 @@
-package com.castelafo.biblioteca.mapper;
+package com.castelaofp.biblioteca.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.castelafo.biblioteca.dto.LibroDto;
-import com.castelafo.biblioteca.model.Libro;
+import com.castelaofp.biblioteca.dto.LibroDto;
+import com.castelaofp.biblioteca.model.Libro;
 
 public class LibroMapper {
 
