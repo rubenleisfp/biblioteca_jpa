@@ -18,6 +18,7 @@ import com.castelaofp.biblioteca.repository.EjemplarRepository;
 import com.castelaofp.biblioteca.repository.LibroRepository;
 import com.castelaofp.biblioteca.service.exceptions.NotFoundException;
 
+//TODO: A completar por el alumno
 @Service
 public class BibliotecaService {
 
@@ -36,17 +37,14 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public LibroDto createLibro(LibroDto libroDto) {
-		Libro libro = LibroMapper.toEntity(libroDto);
-		libro = libroRepository.save(libro);
-		LibroDto dtoCreated = LibroMapper.toDto(libro);
-		return dtoCreated;
+		throw new UnsupportedOperationException("Falta por implementar");
 	};
 
 	/**
 	 * Crea un ejemplar nuevo asociado al libro recibida como argumento
 	 * 
 	 * Devuelve el ejemplar recien creado
-	 * 
+	 * Devuelve una excepcion NotFound sino existe el libro.
 	 * @param libroId
 	 * @param ejemplarDto
 	 * @return
@@ -54,20 +52,8 @@ public class BibliotecaService {
 	 * @throws UploadException
 	 */
 	public EjemplarDto createEjemplar(Long libroId, EjemplarDto ejemplarDto) throws NotFoundException {
-		Optional<Libro> libro = libroRepository.findById(libroId);
-		if (libro.isEmpty()) {
-			LOG.error("No existe el libro con id: " + libro);
-			LOG.error("EjemplarDto " + ejemplarDto);
-			throw new NotFoundException("No existe el libro con id: " + libro);
-		} else {
+		throw new UnsupportedOperationException("Falta por implementar");
 
-			Ejemplar ejemplar = EjemplarMapper.toEntity(ejemplarDto);
-			ejemplar.setLibro(libro.get());
-			ejemplar = ejemplarRepository.save(ejemplar);
-			ejemplarDto = EjemplarMapper.toDto(ejemplar);
-
-			return ejemplarDto;
-		}
 	}
 
 	/**
@@ -76,7 +62,7 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public List<Libro> findAllLibros() {
-		return libroRepository.findAll();
+		throw new UnsupportedOperationException("Falta por implementar");
 	}
 
 	/**
@@ -86,7 +72,7 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public Optional<Libro> getById(Long libroId) {
-		Optional<Libro> libro = libroRepository.findById(libroId);
-		return libro;
+		throw new UnsupportedOperationException("Falta por implementar");
+
 	}
 }

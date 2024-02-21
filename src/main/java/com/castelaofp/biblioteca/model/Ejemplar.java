@@ -8,21 +8,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Entity
+//TODO Falta las anotaciones
 public class Ejemplar {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id;
 
-	@Column(name = "numero_ejemplar")
+	
 	private String numeroEjemplar;
 	
-	@Column(name = "estado")
+	
 	private String estado;
 
-	@ManyToOne
-	@JoinColumn(name = "libro_id")
+
 	private Libro libro;
 
 	// getters y setters
