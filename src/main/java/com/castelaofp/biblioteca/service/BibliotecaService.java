@@ -33,7 +33,7 @@ public class BibliotecaService {
 	/**
 	 * Crea un nuevo libro
 	 * 
-	 * @param libro
+	 * @param libroDto
 	 * @return
 	 */
 	public LibroDto createLibro(LibroDto libroDto) {
@@ -49,7 +49,6 @@ public class BibliotecaService {
 	 * @param ejemplarDto
 	 * @return
 	 * @throws NotFoundException
-	 * @throws UploadException
 	 */
 	public EjemplarDto createEjemplar(Long libroId, EjemplarDto ejemplarDto) throws NotFoundException {
 		throw new UnsupportedOperationException("Falta por implementar");
@@ -61,7 +60,7 @@ public class BibliotecaService {
 	 * 
 	 * @return
 	 */
-	public List<Libro> findAllLibros() {
+	public List<LibroDto> findAllLibros() {
 		throw new UnsupportedOperationException("Falta por implementar");
 	}
 
@@ -71,7 +70,7 @@ public class BibliotecaService {
 	 * @param libroId
 	 * @return
 	 */
-	public Optional<Libro> getById(Long libroId) {
+	public Optional<LibroDto> getById(Long libroId) {
 		throw new UnsupportedOperationException("Falta por implementar");
 
 	}
