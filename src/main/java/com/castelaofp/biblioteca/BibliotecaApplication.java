@@ -84,10 +84,9 @@ public class BibliotecaApplication implements CommandLineRunner {
 	}
 
 	private void mostrarTodosLosLibros() {
-		List<Libro> libros = bibliotecaService.findAllLibros();
-		for (Libro libro : libros) {
-			LibroDto dto = LibroMapper.toDto(libro);
-			System.out.println("Libro: " + dto);
+		List<LibroDto> librosDto = bibliotecaService.findAllLibros();
+		for (LibroDto libroDto : librosDto) {
+			System.out.println("Libro: " + libroDto);
 		}
 	}
 }
