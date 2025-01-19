@@ -1,6 +1,6 @@
 -- Crear el esquema biblioteca si no está creado
-CREATE DATABASE IF NOT EXISTS biblioteca;
-USE biblioteca;
+CREATE DATABASE IF NOT EXISTS ad_biblioteca;
+USE ad_biblioteca;
 
 -- Crear la tabla Libro
 CREATE TABLE Libro (
