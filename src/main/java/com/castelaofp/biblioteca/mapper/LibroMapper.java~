@@ -30,6 +30,7 @@ public class LibroMapper {
     	Libro entity = new Libro();
     	entity.setTitulo(dto.getTitulo());
     	entity.setAutor(dto.getAutor());
+    	entity.setIsbn(dto.getIsbn());
         return entity;
     }
 }

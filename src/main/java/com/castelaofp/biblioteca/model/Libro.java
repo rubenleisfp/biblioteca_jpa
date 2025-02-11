@@ -15,15 +15,9 @@ import jakarta.persistence.OneToMany;
 //TODO Faltan las anotaciones
 public class Libro {
 
-	
 	private Long id;
-
-
 	private String titulo;
-
 	private String autor;
-
-	private String isbn;
 
 	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
     private List<Ejemplar> ejemplares = new ArrayList<>();
@@ -54,19 +48,21 @@ public class Libro {
 		this.autor = autor;
 	}
 
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
 	public List<Ejemplar> getEjemplares() {
 		return ejemplares;
 	}
 
 	public void setEjemplares(List<Ejemplar> ejemplares) {
 		this.ejemplares = ejemplares;
+	}
+
+	@Override
+	public String toString() {
+		return "Libro{" +
+				"id=" + id +
+				", titulo='" + titulo + '\'' +
+				", autor='" + autor + '\'' +
+				", ejemplares=" + ejemplares +
+				'}';
 	}
 }

@@ -6,8 +6,7 @@ USE ad_biblioteca;
 CREATE TABLE Libro (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
-    autor VARCHAR(255) NOT NULL,
-    isbn VARCHAR(20) NOT NULL
+    autor VARCHAR(255) NOT NULL
 );
 
 -- Crear la tabla Ejemplar
