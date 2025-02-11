@@ -8,15 +8,13 @@ public class LibroDto {
 	private Long id;
 	private String titulo;
 	private String autor;
-	private String isbn;
 	private List<EjemplarDto> ejemplares = new ArrayList<>();
 
-	public LibroDto(Long id, String titulo, String autor, String isbn) {
+	public LibroDto(Long id, String titulo, String autor) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.autor = autor;
-		this.isbn = isbn;
 	}
 
 	public LibroDto() {
@@ -48,14 +46,6 @@ public class LibroDto {
 		this.autor = autor;
 	}
 
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
 	public List<EjemplarDto> getEjemplares() {
 		return ejemplares;
 	}
@@ -66,9 +56,11 @@ public class LibroDto {
 
 	@Override
 	public String toString() {
-		return "LibroDto [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", ejemplares="
-				+ ejemplares + "]";
+		return "LibroDto{" +
+				"id=" + id +
+				", titulo='" + titulo + '\'' +
+				", autor='" + autor + '\'' +
+				", ejemplares=" + ejemplares +
+				'}';
 	}
-	
-	
 }

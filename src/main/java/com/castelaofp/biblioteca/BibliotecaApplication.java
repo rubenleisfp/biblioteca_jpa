@@ -63,7 +63,6 @@ public class BibliotecaApplication implements CommandLineRunner {
 		LibroDto nuevoLibroDto = new LibroDto();
 		nuevoLibroDto.setTitulo("El Señor de los Anillos");
 		nuevoLibroDto.setAutor("J.R.R. Tolkien");
-		nuevoLibroDto.setIsbn("978-84-450-7629-5");
 
 		bibliotecaService.createLibro(nuevoLibroDto);
 		System.out.println("Libro creado exitosamente.");

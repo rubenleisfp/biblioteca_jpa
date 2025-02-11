@@ -23,8 +23,6 @@ public class Libro {
 	private String titulo;
 	@Column(name="autor")
 	private String autor;
-	@Column(name="isbn")
-	private String isbn;
 
 	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true, fetch=FetchType.EAGER)
@@ -54,14 +52,6 @@ public class Libro {
 
 	public void setAutor(String autor) {
 		this.autor = autor;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
 	}
 
 	public List<Ejemplar> getEjemplares() {
