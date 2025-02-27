@@ -37,8 +37,10 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public LibroDto createLibro(LibroDto libroDto) {
-		throw new UnsupportedOperationException("Falta por implementar");
-	};
+		Libro libro = LibroMapper.toEntity(libroDto);
+		Libro libroUpdated = libroRepository.save(libro);
+		return LibroMapper.toDto(libroUpdated);
+	}
 
 	/**
 	 * Crea un ejemplar nuevo asociado al libro recibida como argumento
@@ -51,7 +53,30 @@ public class BibliotecaService {
 	 * @throws NotFoundException
 	 */
 	public EjemplarDto createEjemplar(Long libroId, EjemplarDto ejemplarDto) throws NotFoundException {
-		throw new UnsupportedOperationException("Falta por implementar");
+		Optional<Libro> libroOptional = libroRepository.findById(libroId);
+		if (libroOptional.isPresent()) {
+			//VERSION A
+			/*
+			Ejemplar ejemplar = EjemplarMapper.toEntity(ejemplarDto);
+			Libro libro = libroOptional.get();
+			ejemplar.setLibro(libro);
+			Ejemplar ejemplarSaved = ejemplarRepository.save(ejemplar);
+
+			return EjemplarMapper.toDto(ejemplarSaved);
+			*/
+
+			//VERSION B
+			Libro libro = libroOptional.get();
+			Ejemplar ejemplar = EjemplarMapper.toEntity(ejemplarDto);
+			ejemplar.setLibro(libro);
+			libro.getEjemplares().add(ejemplar);
+			libroRepository.save(libro);
+			return ejemplarDto;
+		} else {
+			throw new NotFoundException("No existe el libro con el id: " + libroId);
+		}
+
+
 
 	}
 
@@ -61,7 +86,8 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public List<LibroDto> findAllLibros() {
-		throw new UnsupportedOperationException("Falta por implementar");
+		List<Libro> libros = libroRepository.findAll();
+		return LibroMapper.toDto(libros);
 	}
 
 	/**
@@ -71,7 +97,14 @@ public class BibliotecaService {
 	 * @return
 	 */
 	public Optional<LibroDto> getById(Long libroId) {
-		throw new UnsupportedOperationException("Falta por implementar");
+		Optional<Libro> libroOptional = libroRepository.findById(libroId);
+		if (libroOptional.isPresent()) {
+			LibroDto libroDto = LibroMapper.toDto(libroOptional.get());
+			return Optional.of(libroDto);
+		} else{
+			LOG.warn("El libro que estabas intentando buscar, no existe: " + libroId);
+			return Optional.empty();
+		}
 
 	}
 }
