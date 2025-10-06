@@ -1,26 +1,18 @@
-package com.castelaofp.biblioteca.dto;
+package com.fp.biblioteca.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibroDto {
+//TODO Faltan las anotaciones
+public class Libro {
 
 	private Long id;
 	private String titulo;
 	private String autor;
-	private String isbn;
-	private List<EjemplarDto> ejemplares = new ArrayList<>();
 
-	public LibroDto(Long id, String titulo, String autor) {
-		super();
-		this.id = id;
-		this.titulo = titulo;
-		this.autor = autor;
-	}
+	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
+    private List<Ejemplar> ejemplares = new ArrayList<>();
 
-	public LibroDto() {
-
-	}
 
 	// getters y setters
 	public Long getId() {
@@ -47,30 +39,20 @@ public class LibroDto {
 		this.autor = autor;
 	}
 
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
-	public List<EjemplarDto> getEjemplares() {
+	public List<Ejemplar> getEjemplares() {
 		return ejemplares;
 	}
 
-	public void setEjemplares(List<EjemplarDto> ejemplares) {
+	public void setEjemplares(List<Ejemplar> ejemplares) {
 		this.ejemplares = ejemplares;
 	}
 
-
 	@Override
 	public String toString() {
-		return "LibroDto{" +
+		return "Libro{" +
 				"id=" + id +
 				", titulo='" + titulo + '\'' +
 				", autor='" + autor + '\'' +
-				", isbn='" + isbn + '\'' +
 				", ejemplares=" + ejemplares +
 				'}';
 	}

@@ -1,27 +1,26 @@
-package com.castelaofp.biblioteca.model;
+package com.fp.biblioteca.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
-//TODO Faltan las anotaciones
-public class Libro {
+public class LibroDto {
 
 	private Long id;
 	private String titulo;
 	private String autor;
+	private String isbn;
+	private List<EjemplarDto> ejemplares = new ArrayList<>();
 
-	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
-    private List<Ejemplar> ejemplares = new ArrayList<>();
+	public LibroDto(Long id, String titulo, String autor) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.autor = autor;
+	}
 
+	public LibroDto() {
+
+	}
 
 	// getters y setters
 	public Long getId() {
@@ -48,20 +47,30 @@ public class Libro {
 		this.autor = autor;
 	}
 
-	public List<Ejemplar> getEjemplares() {
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public List<EjemplarDto> getEjemplares() {
 		return ejemplares;
 	}
 
-	public void setEjemplares(List<Ejemplar> ejemplares) {
+	public void setEjemplares(List<EjemplarDto> ejemplares) {
 		this.ejemplares = ejemplares;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Libro{" +
+		return "LibroDto{" +
 				"id=" + id +
 				", titulo='" + titulo + '\'' +
 				", autor='" + autor + '\'' +
+				", isbn='" + isbn + '\'' +
 				", ejemplares=" + ejemplares +
 				'}';
 	}

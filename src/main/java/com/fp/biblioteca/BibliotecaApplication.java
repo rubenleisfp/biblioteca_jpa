@@ -1,4 +1,4 @@
-package com.castelaofp.biblioteca;
+package com.fp.biblioteca;
 
 import java.util.List;
 import java.util.Scanner;
@@ -8,12 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.castelaofp.biblioteca.dto.EjemplarDto;
-import com.castelaofp.biblioteca.dto.LibroDto;
-import com.castelaofp.biblioteca.mapper.LibroMapper;
-import com.castelaofp.biblioteca.model.Libro;
-import com.castelaofp.biblioteca.service.BibliotecaService;
-import com.castelaofp.biblioteca.service.exceptions.NotFoundException;
+import com.fp.biblioteca.dto.EjemplarDto;
+import com.fp.biblioteca.dto.LibroDto;
+import com.fp.biblioteca.service.BibliotecaService;
+import com.fp.biblioteca.service.exceptions.NotFoundException;
 
 @SpringBootApplication
 public class BibliotecaApplication implements CommandLineRunner {
