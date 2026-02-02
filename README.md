@@ -18,4 +18,5 @@ El alumno debe:
 * Completar los métodos de la capa de servicio
 
 # BBDD
-El script de BBDD se encuentra en src/main/resources/design/database/biblioteca.sql
+El script de BBDD se encuentra en src/main/resources/design/database
+Hay scripts para el gestor de base de datos MySQL y SQLLite

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fp.biblioteca.dto.EjemplarDto;
 import com.fp.biblioteca.dto.LibroDto;
@@ -74,6 +75,7 @@ public class BibliotecaService {
 	 *
 	 * @return
 	 */
+	@Transactional(readOnly = true)
 	public List<LibroDto> findAllLibros() {
 		return LibroMapper.toDto(libroRepository.findAll());
 
@@ -85,6 +87,7 @@ public class BibliotecaService {
 	 * @param libroId
 	 * @return
 	 */
+	@Transactional(readOnly = true)
 	public Optional<LibroDto> getById(Long libroId) {
 		Optional<Libro> libro = libroRepository.findById(libroId);
 		if (libro.isPresent()) {

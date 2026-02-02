@@ -24,8 +24,8 @@ public class Libro {
 	@Column(name="autor")
 	private String autor;
 
-	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
-    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true, fetch=FetchType.EAGER)
+	// FIXME: No debemos usar EAGER
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true, fetch=FetchType.LAZY)
     private List<Ejemplar> ejemplares = new ArrayList<>();
 
 
