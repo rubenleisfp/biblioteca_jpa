@@ -13,6 +13,7 @@ import com.fp.biblioteca.dto.LibroDto;
 import com.fp.biblioteca.repository.EjemplarRepository;
 import com.fp.biblioteca.repository.LibroRepository;
 import com.fp.biblioteca.service.exceptions.NotFoundException;
+import org.springframework.transaction.annotation.Transactional;
 
 //TODO: A completar por el alumno
 @Service
@@ -56,6 +57,7 @@ public class BibliotecaService {
 	 * 
 	 * @return
 	 */
+    @Transactional(readOnly = true)
 	public List<LibroDto> findAllLibros() {
 		throw new UnsupportedOperationException("Falta por implementar");
 	}
@@ -66,6 +68,7 @@ public class BibliotecaService {
 	 * @param libroId
 	 * @return
 	 */
+    @Transactional(readOnly = true)
 	public Optional<LibroDto> getById(Long libroId) {
 		throw new UnsupportedOperationException("Falta por implementar");
 

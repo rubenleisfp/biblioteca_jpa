@@ -10,7 +10,7 @@ public class Libro {
 	private String titulo;
 	private String autor;
 
-	// FIXME: No debemos usar EAGER, lo usamos porque en este caso de proyecto Standalone, no carga bien las LazyCollections
+	// FIXME: No debemos usar EAGER
     private List<Ejemplar> ejemplares = new ArrayList<>();
 
 
